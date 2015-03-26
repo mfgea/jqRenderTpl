@@ -1,0 +1,9 @@
+{
+  "name": "jqRenderTpl",
+  "version": "0.1.0",
+  "repository": "https://github.com/mfgea/jqRenderTpl",
+  "devDependencies": {
+    "grunt": "~0.4.2",
+    "grunt-http-server": "^1.2.0"
+  }
+}
