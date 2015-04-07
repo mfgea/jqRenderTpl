@@ -14,7 +14,8 @@ $(document).ready( function () {
         $('aside').render('./templates/comments.html', data, {
             cache: false,
             animation: 'slide',
-            speed: 1000
+            speed: 1000,
+            templateType: 'url'
         });
 
         var tpl = '<section class="comment"><img src="{{photo}}" alt="{{name}}" /><h2><a href="{{uri}}" target="_blank">{{name}}</a></h2><p>{{comment}}</p></section>';
@@ -44,4 +45,12 @@ $(document).ready( function () {
     $('aside').render(tpl, data, {
         animation: 'none'
     });
+
+    $('aside').render('./templates/comments.html', data, {
+        cache: false,
+        animation: 'slide',
+        speed: 1000,
+        templateType: 'url'
+    });
+
 });

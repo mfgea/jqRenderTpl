@@ -1,40 +1,69 @@
+var distBanner = [
+    '/*!',
+    ' *  <%= pkg.name %> - <%= pkg.description%>',
+    ' *  Version: <%= pkg.version %> (<%= grunt.template.today("dd-mm-yyyy") %>)',
+    ' *  Author: <%= pkg.author %>',
+    ' *  URL: <%= pkg.url %>',
+    ' *  License : <%= pkg.license %>',
+    ' */',
+    ''
+].join('\n');
+
 module.exports = function(grunt) {
 
-grunt.initConfig({
+    grunt.initConfig({
+        pkg: grunt.file.readJSON('package.json'),
 
-    'http-server': {
+        uglify: {
+            options: {
+                banner: distBanner
+            },
+            dist: {
+                files: {
+                    'dist/<%= pkg.name %>.min.js': ['src/<%= pkg.name %>.js']
+                }
+            }
+        },
 
-        'dev': {
-            // the server root directory 
-            root: '.',
- 
-            // the server port 
-            // can also be written as a function, e.g. 
-            // port: function() { return 8282; } 
-            port: 8282,
- 
-            // the host ip address 
-            // If specified to, for example, "127.0.0.1" the server will  
-            // only be available on that ip. 
-            // Specify "0.0.0.0" to be available everywhere 
-            host: "127.0.0.1",
- 
-            //cache: <sec>,
-            showDir : true,
-            autoIndex: true,
- 
-            // server default file extension 
-            ext: "html",
+        jshint: {
+            files: ['Gruntfile.js', 'src/*.js'],
+            options: {
+                // options here to override JSHint defaults
+                globals: {
+                    jQuery: true,
+                    console: true,
+                    module: true,
+                    document: true
+                }
+            }
+        },
 
-            // run in parallel with other tasks 
-            runInBackground: false
+        'http-server': {
+            'dev': {
+                root: '.',
+
+                // the server port
+                port: 8282,
+
+                // the host ip address
+                host: "127.0.0.1",
+
+                showDir : true,
+                autoIndex: true,
+
+                // server default file extension
+                ext: "html",
+            }
         }
-    }
 
-});
- 
-grunt.loadNpmTasks('grunt-http-server');
+    });
 
-grunt.registerTask('default', [ 'http-server' ]);
+    grunt.loadNpmTasks('grunt-http-server');
+    grunt.loadNpmTasks('grunt-contrib-uglify');
+    grunt.loadNpmTasks('grunt-contrib-jshint');
+
+    grunt.registerTask('server', [ 'http-server' ]);
+
+    grunt.registerTask('default', [ 'jshint', 'uglify' ]);
 
 };

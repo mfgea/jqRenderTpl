@@ -5,7 +5,7 @@
     Autor:      Octano Ltda.
     Version:    1.0
     Fecha:      07-12-2012
-    
+
     01. CSS Reset
     02. Estructura general
 
@@ -28,7 +28,7 @@ br {clear: both;}
 h1, h2, h3, h4, h5 {font-weight: 700; font-size: 2em; margin-bottom: 1em;}
 h2 {font-size: 1em; margin-bottom: .5em; margin-top: 60px;}
 
-hr {border: none; display: block; background: transparent url(../img/clear.gif); height: 1px; clear: both;position: relative}
+hr {border: none; display: block; background: transparent; height: 1px; clear: both;position: relative}
 strong {font-family: 'PT Sans'; font-weight: 700;}
 
 .block {position:relative; margin:0 auto; display:block; clear:both; overflow:hidden;}

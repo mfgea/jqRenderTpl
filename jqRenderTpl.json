@@ -1,7 +1,7 @@
 {
-    "name": "grow",
-    "title": "jQuery Grow",
-    "description": "A microtemplating plugin for jQuery.",
+    "name": "jqRenderTpl",
+    "title": "jqRenderTpl",
+    "description": "A small templating engine for jQuery.",
     "keywords": [
         "templates",
         "animation",
@@ -11,10 +11,10 @@
         "template",
         "mvc"
     ],
-    "version": "0.7.0",
+    "version": "0.1.0",
     "author": {
-        "name": "Armin Cifuentes",
-        "url": "https://armincifuentes.cl"
+        "name": "Matias Gea",
+        "url": "https://matigea.com"
     },
     "licenses": [
         {
@@ -22,9 +22,8 @@
             "url": "http://www.gnu.org/licenses/gpl.html"
         }
     ],
-    "bugs": "https://github.com/armincifuentes/Grow/issues",
-    "homepage": "http://armincifuentes.cl/grow",
-    "docs": "http://armincifuentes.cl/grow",
+    "bugs": "https://github.com/mfgea/jqRenderTpl/issues",
+    "homepage": "https://github.com/mfgea/jqRenderTpl",
     "dependencies": {
         "jquery": ">=1.9"
     }
